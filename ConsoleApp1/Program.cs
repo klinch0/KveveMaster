@@ -1,5 +1,5 @@
 ﻿// double, для того, что бы в строке 6, в ситуации, когда у нас total < чем сумма процентов, не получать нули
-Double total = 100;
+Double total = 10;
 var arrCases = new Double[] { 10,  5, 10, 7, 13, 15, 40};
 
 // абсолютное значение числа подписок
@@ -25,7 +25,9 @@ for (int i = 0; i < abs.Length; i++)
     {
         
         res.Add(i);
+        total--;
         res.Add(i);
+        total--;
         var weith = abs[i];
         lenDictionary[i] = weith/2 ;
     }
@@ -33,6 +35,7 @@ for (int i = 0; i < abs.Length; i++)
     else if (Math.Round(abs[i]) == 1 || Math.Round(abs[i]) == 0)
     {
         res.Add(i);
+        total--;
         lenDictionary[i] = 0 ;
 
     }
