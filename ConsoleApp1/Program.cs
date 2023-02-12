@@ -1,6 +1,6 @@
 ﻿// double, для того, что бы в строке 6, в ситуации, когда у нас total < чем сумма процентов, не получать нули
 Double total = 10;
-var arrCases = new Double[] { 5, 15, 10, 15, 35, 10, 7, 3};
+var arrCases = new Double[] { 5, 15, 10, 15, 35, 20};
 
 // абсолютное значение числа подписок
 var abs = arrCases.Select(x => x * (total/100)).ToArray();
