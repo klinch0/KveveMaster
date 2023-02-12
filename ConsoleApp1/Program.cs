@@ -1,6 +1,6 @@
 ﻿// double, для того, что бы в строке 6, в ситуации, когда у нас total < чем сумма процентов, не получать нули
 Double total = 10;
-var arrCases = new Double[] { 10,  5, 10, 7, 13, 15, 40};
+var arrCases = new Double[] { 5, 15, 10, 15, 35, 10, 7, 3};
 
 // абсолютное значение числа подписок
 var abs = arrCases.Select(x => x * (total/100)).ToArray();
@@ -17,7 +17,7 @@ for (int i = 0; i < abs.Length; i++)
     // тк изначально у нас вес для всех = бесконечности (n / 0), выставим их абсолютное значение
     if (abs[i] >= 2)
     {
-        lenDictionary[i] = abs[i];
+        lenDictionary[i] = 99999999;
 
     }
     // Костыль, что бы обрабатывать краевые значения
@@ -26,10 +26,9 @@ for (int i = 0; i < abs.Length; i++)
         
         res.Add(i);
         total--;
-        res.Add(i);
-        total--;
+
         var weith = abs[i];
-        lenDictionary[i] = weith/2 ;
+        lenDictionary[i] = weith ;
     }
     // 2е условие, на случай, если у нас стоит 1% и 99% и 10 действий
     else if (Math.Round(abs[i]) == 1 || Math.Round(abs[i]) == 0)
@@ -39,9 +38,6 @@ for (int i = 0; i < abs.Length; i++)
         lenDictionary[i] = 0 ;
 
     }
-
-
-    
 }
 Console.WriteLine(string.Join(", ", lenDictionary));
 
